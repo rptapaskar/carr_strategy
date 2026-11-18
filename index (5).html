@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CARR Lab Research Strategy 2026–27</title>
+<meta name="description" content="Research strategy of the Center for Automation and Robotics Research (CARR Lab), KLE Technological University: Focus Areas, leadership, research themes, research norms and how progress is monitored.">
+<meta property="og:title" content="CARR Lab Research Strategy 2026–27">
+<meta property="og:description" content="Focus Areas, leadership, research themes, norms and monitoring at the Center for Automation and Robotics Research, KLE Technological University.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0f1d36">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1d36'/%3E%3Ccircle cx='20' cy='22' r='5' fill='%2367a6ff'/%3E%3Ccircle cx='44' cy='22' r='5' fill='%2367a6ff'/%3E%3Ccircle cx='32' cy='44' r='5' fill='%23f3b54a'/%3E%3Cpath d='M20 22L44 22L32 44Z' fill='none' stroke='%2367a6ff' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a calm, scrolling briefing. Dark animated hero, then light content sections that reveal gently; every block is explorable but readable at rest. */
+:root{
+  --ink:#0f1d36; --muted:#4b5872; --line:#dde3ec; --ground:#f5f7fb; --surface:#ffffff;
+  --accent:#1d5fbf; --accent-2:#0e8a7e; --accent-soft:#e8f0fc; --warm:#a3610a; --warm-soft:#fdf2df;
+  --ok:#166534; --ok-soft:#dcfce7; --warn:#92400e; --warn-soft:#fef3c7; --risk:#991b1b; --risk-soft:#fee2e2;
+  --hero:#0f1d36; --hero-2:#16305a; --hero-ink:#ffffff; --hero-muted:#b9c7de; --glow:#67a6ff;
+  --shadow:0 1px 2px rgba(15,29,54,.06),0 8px 24px rgba(15,29,54,.06);
+  --font:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#e7edf7; --muted:#a6b3c9; --line:#26354f; --ground:#0b1424; --surface:#121e34;
+    --accent:#7fb0ff; --accent-2:#4fd1c0; --accent-soft:#172a4a; --warm:#f2b85a; --warm-soft:#33260f;
+    --ok:#86efac; --ok-soft:#12301d; --warn:#fcd34d; --warn-soft:#382b0b; --risk:#fca5a5; --risk-soft:#3b1616;
+    --hero:#070e1b; --hero-2:#0f1f3b; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#e7edf7; --muted:#a6b3c9; --line:#26354f; --ground:#0b1424; --surface:#121e34;
+  --accent:#7fb0ff; --accent-2:#4fd1c0; --accent-soft:#172a4a; --warm:#f2b85a; --warm-soft:#33260f;
+  --ok:#86efac; --ok-soft:#12301d; --warn:#fcd34d; --warn-soft:#382b0b; --risk:#fca5a5; --risk-soft:#3b1616;
+  --hero:#070e1b; --hero-2:#0f1f3b; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25); color-scheme: dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+a{color:var(--accent)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.label{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:500}
+
+/* Reveal animation (only when JS runs) */
+html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+html.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  html.js .reveal{opacity:1;transform:none;transition:none}
+  *{animation:none!important;transition:none!important}
+}
+
+/* Top bar */
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;flex:0 0 auto}
+.brand-mark{width:32px;height:32px;border-radius:9px;background:var(--hero);display:grid;place-items:center}
+.nav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1 1 auto}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;text-decoration:none;color:var(--muted);font-size:14px;font-weight:600;padding:8px 12px;border-radius:8px;transition:background .2s,color .2s}
+.nav a:hover{color:var(--ink);background:var(--accent-soft)}
+.nav a.active{color:var(--accent);background:var(--accent-soft)}
+.icon-btn{flex:0 0 auto;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer;color:var(--muted)}
+.icon-btn:hover{color:var(--ink);border-color:var(--accent)}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(1200px 500px at 80% -10%,var(--hero-2),var(--hero));color:var(--hero-ink)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;padding:96px 24px 88px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px;align-items:end}
+.hero .label{color:var(--glow)}
+.hero h1{font-size:clamp(40px,6vw,72px);line-height:1.04;font-weight:800;margin-top:14px}
+.hero h1 span{background:linear-gradient(90deg,#9cc6ff,#7de3d4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lede{font-size:20px;color:var(--hero-muted);margin-top:18px;max-width:58ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:16px;padding:13px 20px;border-radius:12px;transition:transform .2s,box-shadow .2s,background .2s}
+.btn.primary{background:#ffffff;color:#0f1d36}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(103,166,255,.35)}
+.btn.ghost{color:#fff;border:1px solid rgba(255,255,255,.35)}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+.hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:24px;backdrop-filter:blur(6px);display:flex;flex-direction:column;gap:14px}
+.hero-card .row{display:flex;gap:12px;align-items:flex-start}
+.hero-card .dot{flex:0 0 10px;height:10px;border-radius:50%;margin-top:8px;background:var(--glow);box-shadow:0 0 0 4px rgba(103,166,255,.2)}
+.hero-card b{display:block;color:#fff}
+.hero-card span{color:var(--hero-muted);font-size:15px}
+.hero-meta{position:relative;border-top:1px solid rgba(255,255,255,.12)}
+.hero-meta .wrap{padding:18px 24px;display:flex;flex-wrap:wrap;gap:8px 28px;color:var(--hero-muted);font-size:14px}
+
+/* Sections */
+section.block{padding:96px 0 16px;scroll-margin-top:72px}
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;max-width:760px}
+.head h2{font-size:clamp(30px,3.6vw,42px);font-weight:800;line-height:1.12}
+.head p{color:var(--muted);font-size:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;padding:5px 11px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.pill.teal{background:color-mix(in srgb,var(--accent-2) 14%,transparent);color:var(--accent-2)}
+.pill.warm{background:var(--warm-soft);color:var(--warm)}
+
+/* Pillars */
+.pillar{padding:28px;display:flex;flex-direction:column;gap:12px;transition:transform .25s,box-shadow .25s}
+.pillar:hover{transform:translateY(-4px)}
+.pillar .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.pillar h3{font-size:21px}
+.pillar p{color:var(--muted)}
+
+/* Governance */
+.committee{padding:32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:32px;align-items:center;background:linear-gradient(135deg,var(--hero),var(--hero-2));color:#fff;border:none}
+.committee h3{font-size:26px}
+.committee p{color:var(--hero-muted);margin-top:8px}
+.members{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.member{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.member .av{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(103,166,255,.18);color:#cfe2ff}
+.member b{font-size:16px;line-height:1.3}
+.tiers{margin-top:24px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.tier{position:relative;text-align:left;cursor:pointer;padding:22px;border-radius:16px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:6px;transition:border-color .2s,transform .2s,background .2s}
+.tier:hover{transform:translateY(-2px);border-color:var(--accent)}
+.tier[aria-selected="true"]{border-color:var(--accent);background:var(--accent-soft);box-shadow:inset 0 0 0 1px var(--accent)}
+.tier .k{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.tier .t{font-weight:700;font-size:17px;line-height:1.35}
+.tier .step-n{position:absolute;top:18px;right:18px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.tier-panel{margin-top:14px;padding:28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.tier-panel h4,.sub{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;font-weight:500}
+.ticks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.ticks li{position:relative;padding-left:28px}
+.ticks li::before{content:"";position:absolute;left:0;top:7px;width:16px;height:16px;border-radius:50%;background:var(--accent-soft);box-shadow:inset 0 0 0 5px var(--accent)}
+.rule{margin-top:18px;padding:18px 22px;border-radius:14px;background:var(--warm-soft);display:flex;gap:14px;align-items:flex-start}
+.rule svg{flex:0 0 auto;color:var(--warm);margin-top:2px}
+.rule b{color:var(--warm)}
+.fade-in{animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Focus areas */
+.fa-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.fa-tab{cursor:pointer;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:4px;transition:transform .2s,border-color .2s,background .2s}
+.fa-tab:hover{transform:translateY(-2px);border-color:var(--accent)}
+.fa-tab .n{font-weight:800;font-size:24px;color:var(--accent)}
+.fa-tab .nm{font-weight:600;font-size:15px;line-height:1.35}
+.fa-tab .pt{font-size:13px;color:var(--muted)}
+.fa-tab[aria-selected="true"]{background:var(--accent-soft);border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.fa-body{padding:32px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:36px}
+.fa-body h3{font-size:28px;line-height:1.2;margin-top:12px}
+.fa-body .summary{color:var(--muted);margin-top:10px}
+.leads{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.lead{display:flex;gap:12px;align-items:center;padding:12px 16px;border:1px solid var(--line);border-radius:14px;background:var(--ground)}
+.lead .av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-weight:700;font-size:14px}
+.lead small{display:block;color:var(--muted);font-size:13px}
+.lead b{font-size:16px}
+.theme-list{margin-top:24px;display:flex;flex-direction:column;gap:12px}
+.theme-item{border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:var(--surface)}
+.theme-item .top{display:flex;gap:12px;align-items:baseline}
+.theme-item .code{font-family:var(--mono);color:var(--accent);font-size:14px;flex:0 0 auto}
+.theme-item .tt{font-weight:700}
+.people{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.person{font-size:14px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--ground)}
+.person i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--accent);margin-right:6px}
+.person.muted{color:var(--muted);border-style:dashed}
+.side{display:flex;flex-direction:column;gap:22px}
+.split{display:flex;flex-direction:column;gap:10px}
+.split .s{padding:14px 16px;border-radius:12px;background:var(--ground);border:1px solid var(--line)}
+.split .s b{display:block;font-size:14px;color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:14px;font-weight:600;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+
+/* All themes grid */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;align-items:center}
+.filters .lbl{font-size:14px;color:var(--muted);margin-right:4px}
+.filter{cursor:pointer;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;transition:background .2s,color .2s,border-color .2s}
+.filter:hover{border-color:var(--accent)}
+.filter[aria-pressed="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.themes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tcard{padding:22px;display:flex;flex-direction:column;gap:10px;transition:transform .25s}
+.tcard:hover{transform:translateY(-3px)}
+.tcard .meta{display:flex;justify-content:space-between;align-items:center}
+.tcard .code{font-family:var(--mono);font-size:14px;color:var(--muted)}
+.tcard h3{font-size:18px;line-height:1.35}
+.tcard p{font-size:14px;color:var(--muted)}
+
+/* Monitoring timeline */
+.timeline{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.timeline::before{content:"";position:absolute;left:4%;right:4%;top:34px;height:2px;background:var(--line)}
+.timeline .bar{position:absolute;left:4%;top:34px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));width:0;transition:width 1.2s ease}
+.timeline.in .bar{width:92%}
+.tl{position:relative;cursor:pointer;text-align:center;background:none;border:none;padding:0 4px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.tl .node{width:68px;height:68px;border-radius:50%;background:var(--surface);border:2px solid var(--line);display:grid;place-items:center;color:var(--accent);transition:transform .25s,border-color .25s,background .25s;position:relative;z-index:1}
+.tl:hover .node{transform:scale(1.06);border-color:var(--accent)}
+.tl[aria-selected="true"] .node{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 0 0 8px var(--accent-soft)}
+.tl b{font-size:17px}
+.tl span{font-size:14px;color:var(--muted);line-height:1.4}
+.tl-panel{margin-top:24px;padding:28px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.tl-panel h3{grid-column:1/-1;font-size:22px}
+
+/* Briefing template */
+.brief{padding:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:32px;align-items:start}
+.brief h3{font-size:24px}
+.brief p{color:var(--muted);margin-top:10px}
+.sheet{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--ground)}
+.sheet .row{display:grid;grid-template-columns:180px minmax(0,1fr);border-top:1px solid var(--line)}
+.sheet .row:first-child{border-top:none}
+.sheet .row div{padding:12px 16px;font-size:15px}
+.sheet .row div:first-child{font-weight:700;background:var(--surface)}
+.status-row{display:flex;flex-wrap:wrap;gap:8px}
+.st{font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px}
+.st.ok{background:var(--ok-soft);color:var(--ok)}.st.warn{background:var(--warn-soft);color:var(--warn)}.st.risk{background:var(--risk-soft);color:var(--risk)}
+
+/* Norms */
+.norms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+details.norm summary{cursor:pointer;list-style:none;padding:22px 24px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+details.norm summary::-webkit-details-marker{display:none}
+details.norm .h{display:flex;flex-direction:column;gap:4px}
+details.norm .t{font-size:19px;font-weight:700}
+details.norm .plus{flex:0 0 32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);transition:transform .3s}
+details.norm[open] .plus{transform:rotate(45deg)}
+details.norm .body{padding:0 24px 22px;color:var(--muted)}
+.affil{margin:4px 0 12px;padding:14px 16px;border-radius:12px;border:1px dashed var(--accent);background:var(--accent-soft);color:var(--ink);font-weight:600;font-size:15px}
+
+/* KPIs */
+.table-box{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:720px}
+th{text-align:left;padding:16px 20px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500;border-bottom:1px solid var(--line)}
+td{padding:16px 20px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tbody tr{transition:background .2s}
+tbody tr:hover{background:var(--accent-soft)}
+td:first-child{font-weight:700}
+.cad{font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap;background:var(--ground);border:1px solid var(--line)}
+
+/* Pipeline */
+.pipe-wrap{padding:32px}
+.pipe{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.stage{cursor:pointer;position:relative;padding:18px 10px;border-radius:14px;border:1px solid var(--line);background:var(--ground);text-align:center;font-weight:700;font-size:15px;transition:transform .2s,background .3s,color .3s,border-color .3s}
+.stage:hover{transform:translateY(-2px)}
+.stage.lit{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.stage.gate{border-style:dashed}
+.stage.gate.lit{background:var(--warm-soft);border-color:var(--warm);color:var(--warm)}
+.stage[aria-selected="true"]{box-shadow:0 0 0 3px var(--accent)}
+.stage.gate[aria-selected="true"]{box-shadow:0 0 0 3px var(--warm)}
+.pipe-note{margin-top:20px;display:flex;gap:16px;align-items:flex-start}
+.pipe-note .n{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:3px;flex:0 0 auto}
+.pipe-ctrl{margin-top:18px;display:flex;gap:10px}
+.small-btn{cursor:pointer;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 14px;font-size:14px;font-weight:600}
+.small-btn:hover{border-color:var(--accent)}
+
+/* Enablers + infra */
+.enabler{padding:26px;display:flex;flex-direction:column;gap:10px}
+.enabler .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent-2) 14%,transparent);color:var(--accent-2)}
+.enabler h3{font-size:19px}
+.enabler p{color:var(--muted);font-size:16px}
+.infra{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.infra .card{padding:22px}
+.infra h3{font-size:17px;margin-bottom:6px}
+.infra p{font-size:15px;color:var(--muted)}
+
+/* Roadmap */
+.road{position:relative;display:flex;flex-direction:column;gap:14px;padding-left:36px}
+.road::before{content:"";position:absolute;left:13px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--accent),var(--accent-2))}
+.road-item{position:relative;padding:18px 22px}
+.road-item::before{content:"";position:absolute;left:-30px;top:24px;width:14px;height:14px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
+.road-item b{display:block;font-size:17px}
+.road-item span{color:var(--muted);font-size:15px}
+.road-item .who{margin-top:8px}
+
+footer{margin-top:96px;background:var(--hero);color:var(--hero-muted)}
+footer .wrap{padding:40px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;font-size:15px}
+footer b{color:#fff}
+.to-top{position:fixed;right:20px;bottom:20px;z-index:40;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow);display:grid;place-items:center;cursor:pointer;color:var(--accent);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;transform:translateY(8px)}
+.to-top.show{opacity:1;pointer-events:auto;transform:none}
+
+@media (max-width:980px){
+  .hero .wrap{grid-template-columns:1fr;padding-top:72px}
+  .committee,.fa-body,.brief{grid-template-columns:1fr}
+  .members,.tiers,.fa-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid-3,.themes-grid,.infra{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .timeline{grid-template-columns:repeat(5,minmax(140px,1fr));overflow-x:auto;padding-bottom:8px}
+  .tl-panel,.tier-panel{grid-template-columns:1fr}
+  .pipe{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  .members,.tiers,.fa-tabs,.grid-3,.grid-2,.themes-grid,.infra,.norms{grid-template-columns:1fr}
+  .pipe{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sheet .row{grid-template-columns:1fr}
+  .brand span{display:none}
+  section.block{padding-top:72px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="CARR Lab Research Strategy, back to top">
+      <span class="brand-mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#67a6ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="2.2"/><circle cx="18" cy="7" r="2.2"/><circle cx="12" cy="18" r="2.2" stroke="#f3b54a"/><path d="M8 7h8M7 9l4 7M17 9l-4 7"/></svg></span>
+      <span>CARR Lab</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#overview">Overview</a>
+      <a href="#governance">Governance</a>
+      <a href="#focus-areas">Focus Areas</a>
+      <a href="#themes">Themes</a>
+      <a href="#monitoring">Monitoring</a>
+      <a href="#norms">Norms</a>
+      <a href="#kpis">KPIs</a>
+      <a href="#pipeline">Pipeline</a>
+      <a href="#enablers">Enablers</a>
+      <a href="#roadmap">Next steps</a>
+    </nav>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch between light and dark theme">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <div class="label">Center for Automation and Robotics Research · KLE Technological University</div>
+      <h1>Research Strategy <span>2026–27</span></h1>
+      <p class="lede">How CARR Lab organises its research: four Focus Areas with clear leadership, a steady rhythm of review, shared research norms and one source of truth for every result.</p>
+      <div class="cta">
+        <a class="btn primary" href="#focus-areas">Explore the Focus Areas
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn ghost" href="#monitoring">How progress is monitored</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="row"><span class="dot"></span><div><b>Structure</b><span>Focus Areas led by named faculty, paired with partner-lab leads</span></div></div>
+      <div class="row"><span class="dot" style="background:#7de3d4;box-shadow:0 0 0 4px rgba(125,227,212,.2)"></span><div><b>Rhythm</b><span>Weekly reviews, fortnightly briefings, monthly KPI reviews</span></div></div>
+      <div class="row"><span class="dot" style="background:#f3b54a;box-shadow:0 0 0 4px rgba(243,181,74,.2)"></span><div><b>Results</b><span>Projects aligned to themes, publication norms, tracked in one place</span></div></div>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="wrap">
+      <span>Director: Dr. Rakesh P. Tapaskar</span>
+      <span>Part of the STAR Labs ecosystem</span>
+      <span>Partner labs: CEVI · CIM · CAIR</span>
+      <span>November 2026</span>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="block" id="overview">
+    <div class="head reveal">
+      <div class="label">Overview</div>
+      <h2>Three ideas hold the strategy together</h2>
+      <p>CARR Lab's research is organised so that every faculty member knows where their work belongs, who they work with, and how progress will be recognised.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card pillar reveal">
+        <div class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+        <h3>Clear structure</h3>
+        <p>Research is grouped into Focus Areas and Research Themes. Each Focus Area has a CARR Lead and, where shared, a lead from the partner lab.</p>
+      </article>
+      <article class="card pillar reveal">
+        <div class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Steady rhythm</h3>
+        <p>Weekly reviews in each Focus Area, fortnightly briefings to the Director and monthly KPI reviews by the steering committee keep work moving.</p>
+      </article>
+      <article class="card pillar reveal">
+        <div class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/></svg></div>
+        <h3>Visible results</h3>
+        <p>Every project is aligned to a theme, papers follow shared quality norms, and all results are recorded in the CARR Research Tracker.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="governance">
+    <div class="head reveal">
+      <div class="label">Governance</div>
+      <h2>Who steers, who leads, who delivers</h2>
+      <p>A steering committee sets direction. FA Leads run their Focus Areas. Faculty and students carry out the research in each theme.</p>
+    </div>
+    <div class="card committee reveal">
+      <div>
+        <div class="label" style="color:#9cc6ff">Steering Committee</div>
+        <h3 style="margin-top:8px">Sets direction, targets and norms</h3>
+        <p>Approves the research norms, reviews KPIs monthly and backs FA Leads in their decisions. Industry relationships are held by the Director.</p>
+      </div>
+      <div class="members">
+        <div class="member"><span class="av" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6-9 6-9-6z"/><path d="M7 12v5c3 2 7 2 10 0v-5"/></svg></span><b>Dean</b></div>
+        <div class="member"><span class="av" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="10" rx="2"/><path d="M12 9V5M9 14h.01M15 14h.01"/></svg></span><b>HoD, Automation &amp; Robotics</b></div>
+        <div class="member"><span class="av" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></span><b>HoD, Mechanical Engineering</b></div>
+        <div class="member"><span class="av" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></span><b>Director, CARR Lab</b></div>
+      </div>
+    </div>
+    <div class="tiers reveal" role="tablist" aria-label="Roles" id="tiers"></div>
+    <div class="card tier-panel" id="tierPanel" role="tabpanel"></div>
+    <div class="rule reveal">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 16H3L12 3z"/><path d="M12 10v4M12 17h.01"/></svg>
+      <p><b>Working rule.</b> Requests to partner labs, such as naming leads, contacts or assigning faculty, go through the FA Lead. Each partner lab names one lead and single point of contact for joint activities.</p>
+    </div>
+  </section>
+
+  <section class="block" id="focus-areas">
+    <div class="head reveal">
+      <div class="label">Focus Areas</div>
+      <h2>Four Focus Areas, one CARR-led and three shared</h2>
+      <p>Select a Focus Area to see its leads, how the work is shared with the partner lab, its research themes and the faculty working in each.</p>
+    </div>
+    <div class="fa-tabs reveal" role="tablist" aria-label="Focus Areas" id="faTabs"></div>
+    <div class="card fa-body" id="faBody" role="tabpanel"></div>
+  </section>
+
+  <section class="block" id="themes">
+    <div class="head reveal">
+      <div class="label">Research Themes</div>
+      <h2>Every theme at a glance</h2>
+      <p>Filter by Focus Area. Each theme is where projects, students and papers are counted.</p>
+    </div>
+    <div class="filters reveal" id="themeFilters"></div>
+    <div class="themes-grid" id="themesGrid"></div>
+  </section>
+
+  <section class="block" id="monitoring">
+    <div class="head reveal">
+      <div class="label">Monitoring</div>
+      <h2>A rhythm from the lab bench to the Research Council</h2>
+      <p>Select a step to see who takes part, what goes in and what comes out.</p>
+    </div>
+    <div class="timeline reveal" role="tablist" aria-label="Monitoring cadence" id="timeline"><div class="bar" aria-hidden="true"></div></div>
+    <div class="card tl-panel" id="tlPanel" role="tabpanel"></div>
+
+    <div class="card brief reveal" style="margin-top:24px">
+      <div>
+        <div class="label">Fortnightly briefing</div>
+        <h3 style="margin-top:8px">One page per Focus Area</h3>
+        <p>Each FA Lead briefs the Director every fortnight on the same template, so briefings stay short and comparable. Purchase and admin needs that come up are passed to the CARR operations team.</p>
+      </div>
+      <div class="sheet">
+        <div class="row"><div>Theme status</div><div class="status-row"><span class="st ok">On track</span><span class="st warn">Needs attention</span><span class="st risk">At risk</span></div></div>
+        <div class="row"><div>Projects &amp; students</div><div>What moved since the last briefing</div></div>
+        <div class="row"><div>Papers</div><div>Count at each stage, from draft to published</div></div>
+        <div class="row"><div>Partner lab</div><div>Joint activity and how responsive the partner lab has been</div></div>
+        <div class="row"><div>Blockers</div><div>What is stuck, and what is needed from the Director</div></div>
+        <div class="row"><div>Targets</div><div>Progress against the FA's agreed targets</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="norms">
+    <div class="head reveal">
+      <div class="label">Research norms</div>
+      <h2>Shared expectations for every faculty member</h2>
+      <p>Issued as an official CARR circular approved by the steering committee. Focus Area targets are agreed with each FA Lead.</p>
+    </div>
+    <div class="norms">
+      <details class="card norm reveal" open>
+        <summary><span class="h"><span class="label">Project alignment</span><span class="t">Every project belongs to a theme</span></span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="body"><ul class="ticks">
+          <li>Senior Design Projects, institutional research projects, internships and sponsored work are each aligned to one Research Theme.</li>
+          <li>Student progress is tracked as the theme's progress.</li>
+          <li>It is recognised as the guiding faculty member's contribution to CARR Lab.</li>
+        </ul></div>
+      </details>
+      <details class="card norm reveal" open>
+        <summary><span class="h"><span class="label">Conference papers</span><span class="t">Every project publishes each semester</span></span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="body"><ul class="ticks">
+          <li>Each project handled during the semester contributes conference papers affiliated to CARR Lab.</li>
+          <li>The expectation is phased in over the coming semesters.</li>
+        </ul></div>
+      </details>
+      <details class="card norm reveal" open>
+        <summary><span class="h"><span class="label">Journal articles</span><span class="t">Regular submissions and acceptances</span></span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="body"><ul class="ticks">
+          <li>Every faculty member submits journal articles each semester.</li>
+          <li>Acceptances are tracked across the year, since review times are outside the author's control.</li>
+        </ul></div>
+      </details>
+      <details class="card norm reveal" open>
+        <summary><span class="h"><span class="label">Quality</span><span class="t">Indexed, reviewed, credible venues</span></span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="body"><ul class="ticks">
+          <li>Scopus or Web of Science indexed venues only; no predatory journals or conferences.</li>
+          <li>Preference for Q1 and Q2 journals.</li>
+          <li>Every paper passes CARR's internal review before submission.</li>
+        </ul></div>
+      </details>
+      <details class="card norm reveal" open style="grid-column:1/-1">
+        <summary><span class="h"><span class="label">Affiliation</span><span class="t">One consistent line on every paper</span></span><span class="plus" aria-hidden="true">+</span></summary>
+        <div class="body">
+          <div class="affil">Center for Automation and Robotics Research (CARR Lab), Department of &lt;author's department&gt;, KLE Technological University, Hubballi, India</div>
+          <ul class="ticks">
+            <li>The department is the one the faculty member or student belongs to, for example the Department of Mechanical Engineering.</li>
+            <li>Joint papers with CEVI, CIM or CAIR name both labs, using the line agreed with that lab.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="block" id="kpis">
+    <div class="head reveal">
+      <div class="label">KPIs</div>
+      <h2>What is measured, how often, and by whom</h2>
+      <p>Every figure comes from the CARR Research Tracker, which FA Leads update before each fortnightly briefing.</p>
+    </div>
+    <div class="filters reveal" id="kpiFilters"></div>
+    <div class="card table-box reveal">
+      <table>
+        <thead><tr><th scope="col">KPI</th><th scope="col">What is measured</th><th scope="col">Reviewed</th><th scope="col">Owner</th></tr></thead>
+        <tbody id="kpiBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block" id="pipeline">
+    <div class="head reveal">
+      <div class="label">Paper pipeline</div>
+      <h2>Every paper, tracked from idea to publication</h2>
+      <p>Select a stage, or play the pipeline to see how a paper moves through CARR's quality gate.</p>
+    </div>
+    <div class="card pipe-wrap reveal">
+      <div class="pipe" role="tablist" aria-label="Paper stages" id="pipe"></div>
+      <div class="pipe-note" id="pipeNote" role="tabpanel" aria-live="polite"></div>
+      <div class="pipe-ctrl"><button class="small-btn" id="playPipe" type="button">Play the pipeline</button></div>
+    </div>
+  </section>
+
+  <section class="block" id="enablers">
+    <div class="head reveal">
+      <div class="label">Enablers</div>
+      <h2>What CARR provides so the norms can be met</h2>
+    </div>
+    <div class="grid-2">
+      <article class="card enabler reveal"><div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg></div><h3>Protected research block</h3><p>A fixed weekly half-day for CARR research, agreed with the Head of Department.</p></article>
+      <article class="card enabler reveal"><div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div><h3>Internal paper review</h3><p>A reviewer from another theme reads every paper for venue fit, novelty, writing and affiliation before it is submitted.</p></article>
+      <article class="card enabler reveal"><div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div><h3>Priority for FA Leads</h3><p>FA Leads receive priority for students and budget in their Focus Area.</p></article>
+      <article class="card enabler reveal"><div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/></svg></div><h3>Visibility and recognition</h3><p>A CARR Research Day each semester, the CARR Lab LinkedIn page and recognition within KLE Tech and beyond.</p></article>
+    </div>
+
+    <div class="head reveal" style="margin-top:56px;margin-bottom:24px">
+      <div class="label">Research infrastructure</div>
+      <h2 style="font-size:28px">Facilities the Focus Areas build on</h2>
+    </div>
+    <div class="infra">
+      <div class="card reveal"><h3>CoFACT floor</h3><p>A warehouse-like testbed for AMR navigation and fleet research, shared with CIM.</p></div>
+      <div class="card reveal"><h3>Motion capture</h3><p>OptiTrack system for precise ground truth of AMR motion on the CoFACT floor.</p></div>
+      <div class="card reveal"><h3>AMR fleet</h3><p>ROS 2 mobile robots and an industrial AMR platform for multi-robot work.</p></div>
+      <div class="card reveal"><h3>Collaborative robots and arms</h3><p>Industrial cobots and open-source research arms for manipulation and policy learning.</p></div>
+      <div class="card reveal"><h3>Condition-monitoring testbeds</h3><p>A rotating-equipment rig with vibration sensing, and industry pilot setups.</p></div>
+      <div class="card reveal"><h3>HRC Cell</h3><p>A human–robot collaboration cell, being built for collaborative research.</p></div>
+    </div>
+  </section>
+
+  <section class="block" id="roadmap">
+    <div class="head reveal">
+      <div class="label">Next steps</div>
+      <h2>Setting the structure in motion</h2>
+    </div>
+    <div class="road">
+      <div class="card road-item reveal"><b>One-to-one handover with each FA Lead</b><span>Role, team, responsibilities and Focus Area targets agreed.</span><div class="who"><span class="pill">Director</span></div></div>
+      <div class="card road-item reveal"><b>Official CARR circular issued</b><span>Research norms and Focus Area structure, approved by the steering committee.</span><div class="who"><span class="pill">Steering Committee</span></div></div>
+      <div class="card road-item reveal"><b>Focus Area kick-off meetings</b><span>Held jointly with CEVI, CIM and CAIR, with each partner lab's lead.</span><div class="who"><span class="pill">FA Leads</span></div></div>
+      <div class="card road-item reveal"><b>Partner-lab contacts and teams confirmed</b><span>CIM names its FA3 lead and contact; CAIR places its faculty on FA4 themes.</span><div class="who"><span class="pill teal">FA3 &amp; FA4 Leads</span></div></div>
+      <div class="card road-item reveal"><b>Department projects mapped to FA1</b><span>All Department of Automation &amp; Robotics projects aligned to FA1 themes.</span><div class="who"><span class="pill teal">FA1 Lead</span></div></div>
+      <div class="card road-item reveal"><b>CARR Research Tracker live</b><span>Every Focus Area's projects, students and papers recorded in one place.</span><div class="who"><span class="pill warm">All FA Leads</span></div></div>
+      <div class="card road-item reveal"><b>First CARR Research Day</b><span>Each Focus Area showcases its themes, students and papers at semester end.</span><div class="who"><span class="pill">CARR Lab</span></div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Center for Automation and Robotics Research (CARR Lab)</b><br>KLE Technological University, Hubballi</div>
+    <div>Research Strategy 2026–27 · Faculty mapping as of November 2026</div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<script>
+document.documentElement.classList.add('js');
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const ticks = a => '<ul class="ticks">' + a.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul>';
+const initials = n => n.replace(/^(Dr|Mr|Mrs|Ms|Prof)\.?\s+/,'').split(/\s+/).filter(w=>/^[A-Z]/.test(w)).slice(0,2).map(w=>w[0]).join('');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- Theme ---------- */
+try { const t = localStorage.getItem('carr-theme'); if (t) document.documentElement.dataset.theme = t; } catch(e) {}
+document.getElementById('themeBtn').addEventListener('click', () => {
+  const r = document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('carr-theme', r.dataset.theme); } catch(e) {}
+});
+
+/* ---------- Governance roles ---------- */
+const tiers = [
+  {k:'Steering Committee', t:'Dean · HoDs · Director',
+   role:['Sets research direction and Focus Area targets','Approves the research norms and the CARR circular','Reviews KPIs monthly from the CARR Research Tracker','Holds CARR’s industry relationships through the Director'],
+   gets:['Fortnightly briefings from each FA Lead, via the Director','Requirements and blockers as they arise','The Research Council KPI report']},
+  {k:'FA Leads', t:'A CARR Lead per Focus Area, paired with the partner lab’s lead',
+   role:['Run the Focus Area and its kick-off meeting','Hold a weekly review with the faculty in the Focus Area','Brief the Director every fortnight, theme by theme','Own all coordination with the partner lab','Keep the team mapping and the tracker current','Pass the research norms on to every faculty member'],
+   gets:['Priority for students and budget','Visibility and recognition','Backing from the steering committee']},
+  {k:'Faculty in themes', t:'ERG, ERS and IREF members on each theme',
+   role:['Align every project they guide to a Research Theme','Meet the conference and journal norms','Use the CARR affiliation line on every paper','Record projects and papers in the tracker'],
+   gets:['A protected weekly research block','Internal paper review before submission','Credit for student progress in their theme']},
+  {k:'Students', t:'Senior Design, institutional research, internships, PhD and PG',
+   role:['Work on projects aligned to a Research Theme','Co-author papers under the CARR affiliation'],
+   gets:['Access to CARR infrastructure','Guidance from Focus Area faculty','A showcase at the CARR Research Day']}
+];
+const tiersEl = document.getElementById('tiers'), tierPanel = document.getElementById('tierPanel');
+tiersEl.innerHTML = tiers.map((x,i)=>`<button class="tier" role="tab" id="tier-${i}" aria-controls="tierPanel" aria-selected="${i===1}"><span class="step-n">0${i+1}</span><span class="k">${esc(x.k)}</span><span class="t">${esc(x.t)}</span></button>`).join('');
+function showTier(i){
+  [...tiersEl.children].forEach((b,j)=>b.setAttribute('aria-selected', j===i));
+  const x = tiers[i];
+  tierPanel.setAttribute('aria-labelledby','tier-'+i);
+  tierPanel.innerHTML = `<div class="fade-in"><h4>Responsibilities</h4>${ticks(x.role)}</div><div class="fade-in"><h4>Receives</h4>${ticks(x.gets)}</div>`;
+}
+tiersEl.addEventListener('click', e => { const b = e.target.closest('.tier'); if (b) showTier([...tiersEl.children].indexOf(b)); });
+showTier(1);
+
+/* ---------- Focus Areas ---------- */
+const fas = [
+  {n:'FA1', name:'Autonomous Robotic Operations for Smart Manufacturing', partner:'CARR-led',
+   summary:'CARR’s own core Focus Area, bringing manipulation and mobile robotics together for the smart factory.',
+   leads:[['FA Lead','Dr. Vinod Meti']],
+   split:[['CARR','Leads all themes end to end, from topics and students to outcomes']],
+   themes:[
+     {c:'1.1', t:'Intelligent Robot Manipulation & Physical Interaction', p:[], note:'Team being formed from Department of Automation & Robotics projects'},
+     {c:'1.2', t:'Autonomous Mobile & Multi-Robot Systems', p:[], note:'Team being formed from Department of Automation & Robotics projects'}],
+   work:['Vision inspection of pallets on the smart-manufacturing conveyor','Visual affordance for object manipulation on open-source robot arms'],
+   industry:['Samsung','Treewalker','Infosys']},
+  {n:'FA2', name:'Intelligent Physical Systems', partner:'with CEVI',
+   summary:'Robots that understand people and situations, reason about them and act safely in the real world.',
+   leads:[['CARR Lead','Dr. Jyothi C K'],['CEVI Lead','Dr. Ramesh Tabib']],
+   split:[['CEVI brings','Perception, reasoning and vision-language-action models'],['CARR brings','Execution, manipulation and learned control on real robots']],
+   themes:[
+     {c:'2.1', t:'Human Understanding & Multimodal Interaction', p:[['Mr. Girish K','IREF']]},
+     {c:'2.2', t:'Multimodal Reasoning & Collaborative Decision Intelligence', p:[], note:'Staffing in progress with CEVI'},
+     {c:'2.3', t:'Human-Robot Collaboration & Shared Autonomy', p:[], note:'CEVI member joining; staffing in progress'},
+     {c:'2.4', t:'Adaptive & Trustworthy Open-World Systems', p:[], note:'Staffing in progress with CEVI'}],
+   work:['Bimanual robot policy training with LeRobot arms'],
+   industry:['Samsung']},
+  {n:'FA3', name:'Collaborative Factory (CoFACT)', partner:'with CIM',
+   summary:'A shared factory testbed where AMRs, communication and safety are studied against motion-capture ground truth.',
+   leads:[['CARR Lead','Dr. Madhusudhana'],['CIM Lead','To be nominated']],
+   split:[['CARR brings','The CoFACT floor, ROS 2 AMR fleet and motion capture, built and run by CARR'],['CIM brings','Algorithms, experiments and validation for fleet, logistics and digital-factory research']],
+   themes:[
+     {c:'3.1', t:'Low-Cost AMR Navigation Prototype Integrating Vision-Based Obstacle Detection with Drive', p:[['Dr. Nagaraj Ekbote','ERG']]},
+     {c:'3.2', t:'Multi-AMR Coordination Simulation Testbed for Factory Floor Scenario Evaluation', p:[['Mrs. Shilpa T','IREF']]},
+     {c:'3.3', t:'Low-Cost Factory Communication Monitoring Tool for AMR Safety Interlock Validation', p:[['Dr. Raamkrishna','ERG · CIM'],['Mr. Shrihari','ERS']]}],
+   work:['CoFACT floor with ROS 2 AMR fleet','OptiTrack motion capture, installation in progress'],
+   industry:['Infosys']},
+  {n:'FA4', name:'Intelligent Inspection & Asset Reliability', partner:'with CAIR',
+   summary:'Inline quality monitoring and multi-sensor condition monitoring, from industrial testbeds to industry pilots.',
+   leads:[['CARR Lead','Dr. Satish J'],['CAIR Lead','Dr. Uday Kulkarni']],
+   split:[['CAIR brings','Inspection AI, predictive maintenance, uncertainty and edge deployment'],['CARR brings','Robot-assisted sensing, closed-loop response and the physical testbeds']],
+   themes:[
+     {c:'4.1', t:'Inline Quality Monitoring & Process Feedback', p:[['Dr. Vinayak Kulkarni','ERG'],['Dr. Girish','ERG'],['Mr. Anand L','ERS']]},
+     {c:'4.2', t:'Multi-Sensor Condition Monitoring & Fault Prediction', p:[['Dr. Anand Reddy','ERG'],['Mrs. Shamshad','IREF'],['Mr. Shrinivas T','IREF']]}],
+   extra:['CAIR faculty joining FA4: Mrs. Malathi, Mrs. Krupashankari S, Mrs. Sharada S (theme placement in progress)'],
+   work:['Rotating-equipment fault testbed','Washing-machine condition-monitoring pilot','Wire EDM process monitoring'],
+   industry:['Aequs','Spark Minda','Havells']}
+];
+const faTabs = document.getElementById('faTabs'), faBody = document.getElementById('faBody');
+faTabs.innerHTML = fas.map((f,i)=>`<button class="fa-tab" role="tab" id="fa-${i}" aria-controls="faBody" aria-selected="${i===0}"><span class="n">${f.n}</span><span class="nm">${esc(f.name)}</span><span class="pt">${esc(f.partner)}</span></button>`).join('');
+function showFA(i){
+  [...faTabs.children].forEach((b,j)=>b.setAttribute('aria-selected', j===i));
+  const f = fas[i];
+  faBody.setAttribute('aria-labelledby','fa-'+i);
+  const themes = f.themes.map(t => `
+    <div class="theme-item">
+      <div class="top"><span class="code">${t.c}</span><span class="tt">${esc(t.t)}</span></div>
+      <div class="people">${t.p.map(p=>`<span class="person"><i>${esc(p[1])}</i>${esc(p[0])}</span>`).join('')}${t.note?`<span class="person muted">${esc(t.note)}</span>`:''}</div>
+    </div>`).join('');
+  faBody.innerHTML = `
+    <div class="fade-in">
+      <span class="pill">${f.n} · ${esc(f.partner)}</span>
+      <h3>${esc(f.name)}</h3>
+      <p class="summary">${esc(f.summary)}</p>
+      <div class="leads">${f.leads.map(l=>`<div class="lead"><span class="av" aria-hidden="true">${l[1].startsWith('To be')?'?':esc(initials(l[1]))}</span><div><small>${esc(l[0])}</small><b>${esc(l[1])}</b></div></div>`).join('')}</div>
+      <div class="theme-list">${themes}</div>
+      ${f.extra?`<p class="summary" style="margin-top:14px">${esc(f.extra[0])}</p>`:''}
+    </div>
+    <div class="side fade-in">
+      <div><div class="sub">How the work is shared</div><div class="split">${f.split.map(s=>`<div class="s"><b>${esc(s[0])}</b>${esc(s[1])}</div>`).join('')}</div></div>
+      <div><div class="sub">Current work</div>${ticks(f.work)}</div>
+      <div><div class="sub">Industry engagement</div><div class="chips">${f.industry.map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</div></div>
+    </div>`;
+}
+faTabs.addEventListener('click', e => { const b = e.target.closest('.fa-tab'); if (b) showFA([...faTabs.children].indexOf(b)); });
+showFA(0);
+
+/* ---------- All themes ---------- */
+const themeFilters = document.getElementById('themeFilters'), themesGrid = document.getElementById('themesGrid');
+const fOpts = [['All','all'],...fas.map(f=>[f.n,f.n])];
+themeFilters.innerHTML = '<span class="lbl">Show</span>' + fOpts.map((o,i)=>`<button class="filter" type="button" data-f="${o[1]}" aria-pressed="${i===0}">${o[0]}</button>`).join('');
+function renderThemes(f){
+  const items = fas.flatMap(fa => fa.themes.map(t => ({fa, t}))).filter(x => f==='all' || x.fa.n===f);
+  themesGrid.innerHTML = items.map(({fa,t}) => `
+    <article class="card tcard fade-in">
+      <div class="meta"><span class="code">${t.c}</span><span class="pill ${fa.partner==='CARR-led'?'':'teal'}">${fa.n} · ${esc(fa.partner)}</span></div>
+      <h3>${esc(t.t)}</h3>
+      <p>Lead: ${esc(fa.leads.map(l=>l[1]).filter(n=>!n.startsWith('To be')).join(' · '))}</p>
+    </article>`).join('');
+}
+themeFilters.addEventListener('click', e => {
+  const b = e.target.closest('.filter'); if (!b) return;
+  themeFilters.querySelectorAll('.filter').forEach(x=>x.setAttribute('aria-pressed', x===b));
+  renderThemes(b.dataset.f);
+});
+renderThemes('all');
+
+/* ---------- Monitoring ---------- */
+const icons = {
+  week:'<path d="M3 5h18v16H3z"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  two:'<path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/>',
+  month:'<path d="M4 19V5M4 19h16M8 15l4-4 3 3 5-6"/>',
+  sem:'<circle cx="12" cy="8" r="6"/><path d="M8.5 13.5L7 22l5-3 5 3-1.5-8.5"/>',
+  rc:'<path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/>'
+};
+const steps = [
+  {k:'week', when:'Weekly', who:'FA Lead with faculty', title:'Weekly Focus Area review',
+   people:['FA Lead, as chair','Faculty mapped to the Focus Area’s themes'], in:['Progress on each project and paper','Where faculty need help'], out:['Actions for the coming week','Issues raised early to the FA Lead']},
+  {k:'two', when:'Fortnightly', who:'FA Lead briefs the Director', title:'Fortnightly Focus Area briefing',
+   people:['FA Lead','Director'], in:['One-page briefing, theme by theme','Papers by stage, students, partner-lab engagement','Blockers and requirements'], out:['Each theme rated On track, Needs attention or At risk','Blockers cleared; purchase needs passed to operations']},
+  {k:'month', when:'Monthly', who:'Steering committee', title:'Monthly KPI review',
+   people:['Dean','HoD, Automation & Robotics','HoD, Mechanical Engineering','Director, CARR Lab'], in:['KPIs from the CARR Research Tracker','Theme status from the briefings'], out:['Course corrections for each Focus Area','Support and resource decisions']},
+  {k:'sem', when:'Each semester', who:'All Focus Areas', title:'Semester review and CARR Research Day',
+   people:['Steering committee','FA Leads and faculty','Students, partner labs and industry guests'], in:['Semester results against targets','Student projects and papers'], out:['Targets for the next semester','Recognition of top contributors']},
+  {k:'rc', when:'Research Council', who:'Report to management', title:'Research Council reporting',
+   people:['Director, on behalf of CARR Lab'], in:['Figures from the CARR Research Tracker'], out:['A consistent KPI report for management']}
+];
+const tl = document.getElementById('timeline'), tlPanel = document.getElementById('tlPanel');
+tl.insertAdjacentHTML('beforeend', steps.map((s,i)=>`<button class="tl" role="tab" id="tl-${i}" aria-controls="tlPanel" aria-selected="${i===1}"><span class="node"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[s.k]}</svg></span><b>${esc(s.when)}</b><span>${esc(s.who)}</span></button>`).join(''));
+function showStep(i){
+  tl.querySelectorAll('.tl').forEach((b,j)=>b.setAttribute('aria-selected', j===i));
+  const s = steps[i];
+  tlPanel.setAttribute('aria-labelledby','tl-'+i);
+  tlPanel.innerHTML = `<h3 class="fade-in">${esc(s.title)}</h3><div class="fade-in"><h4 class="sub">Who</h4>${ticks(s.people)}</div><div class="fade-in"><h4 class="sub">Inputs</h4>${ticks(s.in)}</div><div class="fade-in"><h4 class="sub">Outputs</h4>${ticks(s.out)}</div>`;
+}
+tl.addEventListener('click', e => { const b = e.target.closest('.tl'); if (b) showStep([...tl.querySelectorAll('.tl')].indexOf(b)); });
+showStep(1);
+
+/* ---------- KPIs ---------- */
+const kpis = [
+  ['Project alignment','Projects mapped to a Research Theme','Fortnightly','FA Lead'],
+  ['Conference papers','Submitted and accepted, per project','Fortnightly','FA Lead'],
+  ['Partner-lab engagement','Joint activity and responsiveness, per theme','Fortnightly','FA Lead'],
+  ['Journal submissions','Per faculty member, each semester','Monthly','FA Lead'],
+  ['Journal acceptances','Per faculty member, each year','Monthly','Steering Committee'],
+  ['Publication quality','Indexing and quartile of venues','Monthly','Steering Committee'],
+  ['Proposals and grants','Submitted and sanctioned, per Focus Area','Monthly','FA Lead'],
+  ['Industry projects','Active projects and new agreements','Monthly','Director'],
+  ['Students engaged','Per theme: Senior Design, institutional research, interns, PhD and PG','Each semester','FA Lead']
+];
+const kpiFilters = document.getElementById('kpiFilters'), kpiBody = document.getElementById('kpiBody');
+const kOpts = [['All','all'],['Fortnightly','Fortnightly'],['Monthly','Monthly'],['Each semester','Each semester'],['Owner: FA Lead','FA Lead'],['Owner: Steering / Director','top']];
+kpiFilters.innerHTML = '<span class="lbl">Show</span>' + kOpts.map((o,i)=>`<button class="filter" type="button" data-f="${o[1]}" aria-pressed="${i===0}">${o[0]}</button>`).join('');
+function renderKpis(f){
+  const rows = kpis.filter(k => f==='all' || k[2]===f || k[3]===f || (f==='top' && k[3]!=='FA Lead'));
+  kpiBody.innerHTML = rows.map(k=>`<tr class="fade-in"><td>${esc(k[0])}</td><td>${esc(k[1])}</td><td><span class="cad">${esc(k[2])}</span></td><td>${esc(k[3])}</td></tr>`).join('');
+}
+kpiFilters.addEventListener('click', e => {
+  const b = e.target.closest('.filter'); if (!b) return;
+  kpiFilters.querySelectorAll('.filter').forEach(x=>x.setAttribute('aria-pressed', x===b));
+  renderKpis(b.dataset.f);
+});
+renderKpis('all');
+
+/* ---------- Pipeline ---------- */
+const stages = [
+  ['Idea','A research question or result worth a paper, logged against its theme and project.'],
+  ['Draft','Writing in progress, with a target venue chosen from Scopus or Web of Science indexed venues.'],
+  ['Internal review','The quality gate. A reviewer from another theme checks venue fit, novelty, writing and affiliation before anything is submitted.'],
+  ['Submitted','Under review at the journal or conference, and counted toward the submission norm.'],
+  ['Accepted','Accepted for publication, and counted toward the acceptance norm.'],
+  ['Published','Online with the CARR affiliation, recorded with its indexing and quartile.']
+];
+const pipe = document.getElementById('pipe'), pipeNote = document.getElementById('pipeNote');
+pipe.innerHTML = stages.map((s,i)=>`<button class="stage${i===2?' gate':''}" role="tab" id="stage-${i}" aria-controls="pipeNote" aria-selected="false">${s[0]}</button>`).join('');
+function showStage(i){
+  [...pipe.children].forEach((b,j)=>{ b.setAttribute('aria-selected', j===i); b.classList.toggle('lit', j<=i); });
+  pipeNote.setAttribute('aria-labelledby','stage-'+i);
+  pipeNote.innerHTML = `<span class="n">Stage ${i+1} of ${stages.length}</span><p class="fade-in"><b>${stages[i][0]}.</b> ${esc(stages[i][1])}</p>`;
+}
+pipe.addEventListener('click', e => { const b = e.target.closest('.stage'); if (b){ stopPlay(); showStage([...pipe.children].indexOf(b)); } });
+let playTimer = null;
+function stopPlay(){ clearInterval(playTimer); playTimer = null; document.getElementById('playPipe').textContent = 'Play the pipeline'; }
+document.getElementById('playPipe').addEventListener('click', () => {
+  if (playTimer) { stopPlay(); return; }
+  let i = 0; showStage(0);
+  document.getElementById('playPipe').textContent = 'Pause';
+  playTimer = setInterval(() => { i++; if (i >= stages.length) { stopPlay(); return; } showStage(i); }, 1600);
+});
+showStage(2);
+
+/* ---------- Keyboard support for tab lists ---------- */
+document.querySelectorAll('[role="tablist"]').forEach(list => {
+  list.addEventListener('keydown', e => {
+    if (!['ArrowRight','ArrowLeft'].includes(e.key)) return;
+    const tabs = [...list.querySelectorAll('[role="tab"]')];
+    const i = tabs.indexOf(document.activeElement); if (i < 0) return;
+    const n = tabs[(i + (e.key==='ArrowRight'?1:-1) + tabs.length) % tabs.length];
+    n.focus(); n.click(); e.preventDefault();
+  });
+});
+
+/* ---------- Reveal on scroll ---------- */
+const revealEls = document.querySelectorAll('.reveal, .timeline');
+if ('IntersectionObserver' in window && !reduce) {
+  const io = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), {rootMargin:'0px 0px -8% 0px', threshold:0.05});
+  revealEls.forEach((el,i) => { el.style.transitionDelay = (i % 3) * 70 + 'ms'; io.observe(el); });
+  setTimeout(() => revealEls.forEach(el => el.classList.add('in')), 4000);
+} else {
+  revealEls.forEach(el => el.classList.add('in'));
+}
+
+/* ---------- Nav highlight, progress, back to top ---------- */
+const navLinks = [...document.querySelectorAll('.nav a')];
+const secs = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+const prog = document.getElementById('progress'), toTop = document.getElementById('toTop');
+function onScroll(){
+  let cur = -1; secs.forEach((s,i)=>{ if (s && s.getBoundingClientRect().top < 140) cur = i; });
+  navLinks.forEach((a,i)=>a.classList.toggle('active', i===cur));
+  const h = document.documentElement; const p = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+  prog.style.width = (p*100) + '%';
+  toTop.classList.toggle('show', h.scrollTop > 700);
+}
+document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+toTop.addEventListener('click', () => window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'}));
+
+/* ---------- Hero animation: a network of nodes with AMRs travelling between them ---------- */
+(function(){
+  const cv = document.getElementById('net'), ctx = cv.getContext('2d');
+  let W, H, dpr, nodes = [], bots = [], raf;
+  function size(){
+    dpr = Math.min(2, window.devicePixelRatio || 1);
+    W = cv.clientWidth; H = cv.clientHeight;
+    cv.width = W*dpr; cv.height = H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    const count = Math.round(Math.min(70, Math.max(28, W*H/22000)));
+    nodes = Array.from({length:count}, () => ({x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*.18, vy:(Math.random()-.5)*.18}));
+    bots = Array.from({length:6}, () => newBot());
+  }
+  function newBot(){ const a = Math.floor(Math.random()*nodes.length), b = Math.floor(Math.random()*nodes.length); return {a, b, t:Math.random(), s:.002+Math.random()*.003, warm:Math.random()<.35}; }
+  function frame(move){
+    ctx.clearRect(0,0,W,H);
+    if (move) nodes.forEach(n => { n.x += n.vx; n.y += n.vy; if (n.x<0||n.x>W) n.vx*=-1; if (n.y<0||n.y>H) n.vy*=-1; });
+    const maxD = 150;
+    for (let i=0;i<nodes.length;i++) for (let j=i+1;j<nodes.length;j++){
+      const a=nodes[i], b=nodes[j], dx=a.x-b.x, dy=a.y-b.y, d=Math.hypot(dx,dy);
+      if (d<maxD){ ctx.strokeStyle=`rgba(103,166,255,${(1-d/maxD)*.22})`; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
+    }
+    nodes.forEach(n => { ctx.fillStyle='rgba(156,198,255,.55)'; ctx.beginPath(); ctx.arc(n.x,n.y,1.8,0,Math.PI*2); ctx.fill(); });
+    bots.forEach((bt,k) => {
+      const a=nodes[bt.a], b=nodes[bt.b]; if(!a||!b) return;
+      if (move){ bt.t += bt.s; if (bt.t>=1){ bots[k]=newBot(); bots[k].t=0; return; } }
+      const x=a.x+(b.x-a.x)*bt.t, y=a.y+(b.y-a.y)*bt.t;
+      ctx.strokeStyle = bt.warm ? 'rgba(243,181,74,.35)' : 'rgba(125,227,212,.35)'; ctx.setLineDash([3,5]);
+      ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = bt.warm ? '#f3b54a' : '#7de3d4';
+      ctx.beginPath(); ctx.arc(x,y,3.6,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle = bt.warm ? 'rgba(243,181,74,.18)' : 'rgba(125,227,212,.18)';
+      ctx.beginPath(); ctx.arc(x,y,9,0,Math.PI*2); ctx.fill();
+    });
+  }
+  function loop(){ frame(true); raf = requestAnimationFrame(loop); }
+  size();
+  if (reduce) frame(false); else loop();
+  let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { size(); if (reduce) frame(false); }, 150); });
+  document.addEventListener('visibilitychange', () => { if (reduce) return; if (document.hidden) cancelAnimationFrame(raf); else loop(); });
+})();
+</script>
+</body>
+</html>
